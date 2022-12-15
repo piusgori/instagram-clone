@@ -1,22 +1,16 @@
-import { Button } from '@react-native-material/core';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Navigation from './navigation/Navigation';
+import AppContextProvider from './services/app-context';
+import AuthContextProvider from './services/auth-context';
+import InterfaceContextProvider from './services/interface-context';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Button title="You" variant='contained'></Button>
-      <StatusBar style="auto" />
-    </View>
+    <AuthContextProvider>
+      <AppContextProvider>
+        <InterfaceContextProvider>
+          <Navigation></Navigation>
+        </InterfaceContextProvider>
+      </AppContextProvider>
+    </AuthContextProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
