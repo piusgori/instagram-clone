@@ -6,19 +6,28 @@ import SearchScreen from '../screens/SearchScreen';
 import ReelsScreen from '../screens/ReelsScreen';
 import ShopScreen from '../screens/ShopScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import { Image, StyleSheet } from 'react-native';
+import ProfileImage from '../components/interface/ProfileImage';
 
 const BottomTab = createBottomTabNavigator();
 
 const HomeTab = () => {
   return (
-    <BottomTab.Navigator screenOptions={{ headerShown: false }}>
-        <BottomTab.Screen name='Home' component={HomeScreen} options={{ tabBarIcon: ({ color, size }) => <Ionicons name='home' size={size} color={color}></Ionicons> }}></BottomTab.Screen>
+    <BottomTab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
+        <BottomTab.Screen name='Home' component={HomeScreen} options={{ tabBarIcon: ({ color, size }) => <Image source={require('../assets/icons/instagram-home.png')} style={styles.image(size)}></Image> }}></BottomTab.Screen>
         <BottomTab.Screen name='Search' component={SearchScreen} options={{ tabBarIcon: ({ color, size }) => <Ionicons name='search' size={size} color={color}></Ionicons> }}></BottomTab.Screen>
-        <BottomTab.Screen name='Reels' component={ReelsScreen} options={{ tabBarIcon: ({ color, size }) => <Ionicons name='videocam' size={size} color={color}></Ionicons> }}></BottomTab.Screen>
-        <BottomTab.Screen name='Shop' component={ShopScreen} options={{ tabBarIcon: ({ color, size }) => <Ionicons name='cart' size={size} color={color}></Ionicons> }}></BottomTab.Screen>
-        <BottomTab.Screen name='Profile' component={ProfileScreen} options={{ tabBarIcon: ({ color, size }) => <Ionicons name='person' size={size} color={color}></Ionicons> }}></BottomTab.Screen>
+        <BottomTab.Screen name='Reels' component={ReelsScreen} options={{ tabBarIcon: ({ color, size }) => <Image source={require('../assets/icons/instagram-reels.png')} style={styles.image(size)}></Image> }}></BottomTab.Screen>
+        <BottomTab.Screen name='Shop' component={ShopScreen} options={{ tabBarIcon: ({ color, size }) => <Image source={require('../assets/icons/instagram-shop.png')} style={styles.image(size)}></Image> }}></BottomTab.Screen>
+        <BottomTab.Screen name='Profile' component={ProfileScreen} options={{ tabBarIcon: ({ color, size }) => <ProfileImage></ProfileImage> }}></BottomTab.Screen>
     </BottomTab.Navigator>
   )
 }
 
-export default HomeTab
+export default HomeTab;
+
+const styles = StyleSheet.create({
+  image: (size) => ({
+      width: size,
+      height: size,
+  }),
+});

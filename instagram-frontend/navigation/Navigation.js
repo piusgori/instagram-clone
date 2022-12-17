@@ -1,9 +1,10 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 import React from 'react';
-import HomeScreen from '../screens/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeTab from './HomeTab';
+import Left from '../components/top/Left';
+import Right from '../components/top/Right';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,12 +17,8 @@ const Navigation = () => {
                 component={HomeTab}
                 options={{
                     headerTitle: '',
-                    headerLeft: () => {
-                        return <Image style={styles.image} source={require('../assets/instagram-logo.png')}></Image>
-                    },
-                    headerRight: () => {
-                        return <Text>Hello</Text>
-                    }
+                    headerLeft: () => <Left></Left>,
+                    headerRight: () => <Right></Right>
                 }}
             ></Stack.Screen>
         </Stack.Navigator>
