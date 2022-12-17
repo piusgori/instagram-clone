@@ -1,12 +1,18 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const Right = () => {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('../../assets/icons/instagram-create.png')}></Image>
-      <Image style={styles.image} source={require('../../assets/icons/instagram-unliked.png')}></Image>
-      <Image style={styles.image} source={require('../../assets/icons/instagram-chats.png')}></Image>
+        <TouchableOpacity>
+            <Image style={styles.image} source={require('../../assets/icons/instagram-create.png')}></Image>
+        </TouchableOpacity>
+        <TouchableOpacity>
+            <Image style={styles.image} source={require('../../assets/icons/instagram-unliked.png')}></Image>
+        </TouchableOpacity>
+        <TouchableOpacity>
+            <Image style={styles.image} source={require('../../assets/icons/instagram-chats.png')}></Image>
+        </TouchableOpacity>
     </View>
   )
 }
