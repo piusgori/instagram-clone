@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
+import Stories from '../components/home/Stories';
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>HomeScreen</Text>
+      <Stories></Stories>
     </View>
   )
 }
