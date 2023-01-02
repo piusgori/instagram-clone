@@ -1,12 +1,17 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import React from 'react';
 import Stories from '../components/home/Stories';
+import { Divider } from '@react-native-material/core';
+import Post from '../components/home/Post';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Stories></Stories>
-    </View>
+      <Divider style={{ marginBottom: 20 }}></Divider>
+      <Post></Post>
+      <Post></Post>
+    </ScrollView>
   )
 }
 

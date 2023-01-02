@@ -1,18 +1,17 @@
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import IconImage from '../interface/IconImage';
 
 const Right = () => {
+    const createIcon = require('../../assets/icons/instagram-create.png');
+    const unlikedIcon = require('../../assets/icons/instagram-unliked.png');
+    const chatsIcon = require('../../assets/icons/instagram-chats.png');
+
   return (
     <View style={styles.container}>
-        <TouchableOpacity>
-            <Image style={styles.image} source={require('../../assets/icons/instagram-create.png')}></Image>
-        </TouchableOpacity>
-        <TouchableOpacity>
-            <Image style={styles.image} source={require('../../assets/icons/instagram-unliked.png')}></Image>
-        </TouchableOpacity>
-        <TouchableOpacity>
-            <Image style={styles.image} source={require('../../assets/icons/instagram-chats.png')}></Image>
-        </TouchableOpacity>
+        <IconImage image={createIcon}></IconImage>
+        <IconImage image={unlikedIcon}></IconImage>
+        <IconImage image={chatsIcon}></IconImage>
     </View>
   )
 }
@@ -23,9 +22,4 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
     },
-    image: {
-        height: 25,
-        width: 25,
-        marginHorizontal: 12
-    }
 })
