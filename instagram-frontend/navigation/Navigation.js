@@ -15,11 +15,7 @@ const Navigation = () => {
             <Stack.Screen 
                 name='HomeAll'
                 component={HomeTab}
-                options={{
-                    headerTitle: '',
-                    headerLeft: () => <Left></Left>,
-                    headerRight: () => <Right></Right>
-                }}
+                options={{ headerShown: false }}
             ></Stack.Screen>
         </Stack.Navigator>
     </NavigationContainer>

@@ -12,6 +12,7 @@ export default Left;
 const styles = StyleSheet.create({
     image: {
         width: 120,
-        height: 40
+        height: 40,
+        marginLeft: 12
     }
 })
